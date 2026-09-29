@@ -1,5 +1,4 @@
 from fastapi import FastAPI, HTTPException
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -15,7 +14,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -93,7 +92,13 @@ def serve_index():
         return FileResponse(index_file)
     return {"message": "FARM Module 2 API is running. index.html not found."}
 
-app.mount("/static", StaticFiles(directory=str(CURRENT_DIR)), name="static")
+ALLOWED_STATIC_FILES = {"app.js", "styles.css"}
+
+@app.get("/static/{filename}")
+def serve_static(filename: str):
+    if filename not in ALLOWED_STATIC_FILES:
+        raise HTTPException(status_code=404, detail="Not found")
+    return FileResponse(CURRENT_DIR / filename)
 
 if __name__ == "__main__":
     print("Starting Module 2 server on http://127.0.0.1:8000 ...")
