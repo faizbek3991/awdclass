@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FARM Stack - Module 2</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Header -->
+    <header class="header">
+      <span class="badge">FARM Full Stack &bull; Day 1</span>
+      <h1>Module 2: Python &amp; FastAPI</h1>
+      <p class="subtitle">Interactive Greeting &amp; Arithmetic Operations</p>
+    </header>
+
+    <!-- Card 1: User Greeting & Location -->
+    <main class="card">
+      <h2><span class="icon">👋</span> User Greeting</h2>
+      <p class="description">Enter your details to generate a personalized greeting:</p>
+      
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input id="name" placeholder="e.g. Muhammad Faiz" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="live">Where do you live?</label>
+        <input id="live" placeholder="e.g. Kuala Lumpur" autocomplete="off">
+      </div>
+
+      <button onclick="greet()">Generate Greeting</button>
+      <div id="greetResult" class="result-box hidden"></div>
+    </main>
+
+    <!-- Card 2: Python Arithmetic Operations -->
+    <main class="card">
+      <h2><span class="icon">🔢</span> Python Arithmetic Calculator</h2>
+      <p class="description">Perform Python mathematical operations on two numbers:</p>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="num1">First Number (num1)</label>
+          <input type="number" id="num1" placeholder="e.g. 15" step="any">
+        </div>
+        <div class="form-group">
+          <label for="num2">Second Number (num2)</label>
+          <input type="number" id="num2" placeholder="e.g. 4" step="any">
+        </div>
+      </div>
+
+      <label class="label-ops">Select Operation:</label>
+      <div class="button-grid">
+        <button onclick="calculate('add')" class="op-btn">+ Add</button>
+        <button onclick="calculate('subtract')" class="op-btn">- Subtract</button>
+        <button onclick="calculate('multiply')" class="op-btn">&times; Multiply</button>
+        <button onclick="calculate('divide')" class="op-btn">&divide; Divide</button>
+        <button onclick="calculate('power')" class="op-btn secondary">&circ; Exponent</button>
+      </div>
+
+      <div id="calcResult" class="result-box hidden"></div>
+    </main>
+
+    <!-- Status Footer -->
+    <footer class="footer">
+      <span id="apiStatus" class="status-pill connecting">Checking FastAPI API...</span>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
