@@ -1,0 +1,50 @@
+/* Selector: body -> targets the whole page */
+body {
+  font-family: Arial, sans-serif;
+  background: #071426;
+  color: #f6faff;
+  display: grid;          /* layout engine */
+  place-items: center;    /* centre horizontally + vertically */
+  min-height: 100vh;      /* full screen height */
+  margin: 0;
+}
+
+/* Selector: .card -> targets class="card" */
+.card {
+  width: 360px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #0d2138;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #2a4a6b;
+  background: #071426;
+  color: #f6faff;
+}
+
+/* Selector: button -> targets every <button> */
+button {
+  background: #19d3e6;
+  color: #071426;
+  font-weight: bold;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover { opacity: 0.85; }
+
+button.secondary {
+  background: transparent;
+  color: #19d3e6;
+  border: 1px solid #19d3e6;
+}
+
+#result { min-height: 1.4em; }

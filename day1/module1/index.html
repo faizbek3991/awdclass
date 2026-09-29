@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Hello FARM</h1>
+
+    <!-- IDs let JavaScript find these elements -->
+    <input id="name" placeholder="Enter your name">
+    <button onclick="greet()">Say Hello</button>
+    <p id="result"></p>
+
+    <!-- Slide 14 stretch: objects + arrays -->
+    <button class="secondary" onclick="showCourse()">Show Course Info</button>
+  </main>
+
+  <!-- Load JavaScript LAST so the elements above already exist -->
+  <script src="app.js"></script>
+</body>
+</html>
